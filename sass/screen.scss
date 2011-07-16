@@ -1,0 +1,30 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+
+table.goban {
+    background: {
+        color: hsl( 50, 70%, 50% );
+    }
+    @include border-radius( 2px );
+    @include box-shadow( 0 0 1em black );
+    font: {
+        family: Futura, Arial, sans-serif;
+        size: 12px;
+    }
+}
+
+table.goban th, td {
+    height: 1em;
+    width: 1em;
+}
+
+table.goban th {
+    color: hsla( 0, 0%, 0%, 0.5 );
+    font: {
+        weight: normal;
+    }
+}

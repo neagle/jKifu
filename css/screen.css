@@ -1,0 +1,32 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 8, ../sass/screen.scss */
+table.goban {
+  background-color: #d9bb26;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 0 1em black;
+  -webkit-box-shadow: 0 0 1em black;
+  -o-box-shadow: 0 0 1em black;
+  box-shadow: 0 0 1em black;
+  font-family: Futura, Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* line 20, ../sass/screen.scss */
+table.goban th, td {
+  height: 1em;
+  width: 1em;
+}
+
+/* line 25, ../sass/screen.scss */
+table.goban th {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: normal;
+}
