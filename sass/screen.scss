@@ -5,26 +5,166 @@
 
 @import "compass/css3";
 
+html, body {
+    background: {
+        color: hsl( 50, 20%, 50% );
+    }
+    font-family: Lucida Grande;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    
+}
+
+kifu {
+    display: block;
+}
+
+$line: hsl( 50, 70%, 20% );
+
 table.goban {
     background: {
         color: hsl( 50, 70%, 50% );
     }
-    @include border-radius( 2px );
-    @include box-shadow( 0 0 1em black );
+    border: {
+        collapse: collapse;
+        spacing: 0;
+    }
+    @include box-shadow( 0 0 1em hsla( 0, 0%, 0%, 0.2 ) );
     font: {
         family: Futura, Arial, sans-serif;
         size: 12px;
     }
+    margin: 0 auto;
 }
 
 table.goban th, td {
-    height: 1em;
-    width: 1em;
+    height: 20px; 
+    padding: 0;
+    width: 20px;
 }
 
 table.goban th {
+    background: {
+        color: hsl( 50, 40%, 50% );
+    }
     color: hsla( 0, 0%, 0%, 0.5 );
     font: {
         weight: normal;
     }
+    padding: 5px;
+    text: {
+        align: center;
+    }
+}
+
+table.goban td {
+    position: relative;
+}
+
+table.goban td:before,
+table.goban td:after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+table.goban td:before {
+    border: {
+        left: 1px solid $line;
+    }
+    left: 50%;
+    height: 100%;
+    top: 0;
+    width: 0;
+}
+
+table.goban td:after {
+    border: {
+        top: 1px solid $line;
+    }
+    left: 0;
+    height: 0;
+    top: 50%;
+    width: 100%;
+}
+
+table.goban tr td:first-of-type:after {
+    left: 50%;
+    width: 50%;
+}
+
+table.goban tr td:last-of-type:after {
+    width: 50%;
+}
+
+table.goban tr:first-child td:before {
+    border: {
+        bottom: 1px solid $line;
+    }
+    height: 50%;
+    top: 50%; 
+}
+
+table.goban tr:last-child td:before {
+    border: {
+        top: 1px solid $line;
+    }
+    bottom: 50%;
+    height: 50%;
+    top: auto;
+}
+
+/* Star points */
+table.goban tr:nth-child( 6n + 4 ) td:nth-of-type( 6n + 4 ) {
+    @include background-image(
+        radial-gradient(
+            color-stops( $line 2px, hsla( 0, 0%, 0%, 0 ) 3px ),
+            52% 52% 
+        )
+    );
+}
+
+/* Stones */
+table.goban b.shadow,
+table.goban b.stone, {
+    @include border-radius( 50% );
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+table.goban b.shadow {
+    @include box-shadow( 0 0 5px hsla( 0, 0%, 0%, 0.5 ) );
+    z-index: 50;
+}
+
+table.goban b.stone {
+    z-index: 100;
+}
+
+table.goban b.stone.black {
+    background-color: black;
+    @include background-image(
+        radial-gradient(
+            color-stops( hsl( 0, 0%, 30% ) 0, hsl( 0, 0%, 0% ) 75% ),
+            35% 35% 
+        )
+    );
+}
+
+table.goban b.stone.white {
+    background: white;
+    @include background-image(
+        radial-gradient(
+            color-stops( hsl( 0, 0%, 100% ) 0, hsl( 0, 0%, 70% ) 75% ),
+            35% 35% 
+        )
+    );
 }

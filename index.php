@@ -21,6 +21,15 @@
     <script>
         $( document ).ready(function() {
             $( 'kifu' ).jKifu();
+
+            // Render a few stones for render debugging
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 4, 6, 'white' );
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 4, 5, 'white' );
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 3, 5, 'white' );
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 3, 6 );
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 3, 7 );
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 4, 7 );
+            $( 'kifu' ).data( 'jKifu' ).goban.renderStone( 3, 3 );
         });
     </script>
 </body>
