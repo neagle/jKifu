@@ -1,0 +1,4 @@
+h1. jKifu
+h2. An SGF viewer built on jQuery and jQuery UI
+
+p. Coders of one kind or another are probably the most over-represented vocational group in the non-Asian go community. Happily, this means we have an over-abundance of great sgf viewers / editors, my favorite of which are Eidogo, SmartGo, and cGoban (KGS). I decided to build my own using HTML/CSS for rendering and JavaScript for the back end because it seemed like it would be fun. It would also give me the chance to develop unusual custom features that are not part of existing SGF viewers.
